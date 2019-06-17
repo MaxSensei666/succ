@@ -1099,18 +1099,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &2377624481426556994
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2377624481426556998}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf8192d1eff046f4f8764a7a16789147, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &2377624481426556996
 Transform:
   m_ObjectHideFlags: 0
@@ -1185,7 +1173,7 @@ GameObject:
   - component: {fileID: 2377624481426556997}
   - component: {fileID: 2377624481426556993}
   - component: {fileID: 2377624481426556992}
-  - component: {fileID: 2377624481426556994}
+  - component: {fileID: 2377624481426557001}
   - component: {fileID: 2377624481426556999}
   - component: {fileID: 2377624481426557000}
   m_Layer: 9
@@ -1249,6 +1237,19 @@ MonoBehaviour:
   succPrefab: {fileID: 6753607750330929011, guid: 1f2b69780827c7441bc3f30cc95c4af9,
     type: 3}
   maxSizeFactor: 4
+  shootForceMultiplier: 100
+--- !u!114 &2377624481426557001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2377624481426556998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec572b6000a5f05449076b106d623cb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4543388933068550051
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1315,6 +1316,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4543388934305095019, guid: 2d97a7fb0e268004fb5d1fec17124298,
+        type: 3}
+      propertyPath: minScale
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4543388934305095019, guid: 2d97a7fb0e268004fb5d1fec17124298,
+        type: 3}
+      propertyPath: maxScale
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4543388934305095019, guid: 2d97a7fb0e268004fb5d1fec17124298,
+        type: 3}
+      propertyPath: quantity
+      value: 200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d97a7fb0e268004fb5d1fec17124298, type: 3}
