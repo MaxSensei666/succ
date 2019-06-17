@@ -13,10 +13,16 @@ public class MouseControls : Controls {
 
     protected override void Update() {
         if(Input.GetMouseButtonDown(1)) {
-            SendMessage("GrapplingHookDown");
+            BroadcastMessage("GrapplingHookDown");
         }   
-        else if(Input.GetMouseButtonUp(1)) {
-            SendMessage("GrapplingHookUp");
-        } 
+        if(Input.GetMouseButtonUp(1)) {
+            BroadcastMessage("GrapplingHookUp");
+        }
+        if(Input.GetMouseButtonDown(0)) {
+            BroadcastMessage("ShootDown");
+        }
+        if(Input.GetMouseButtonUp(0)) {
+            BroadcastMessage("ShootUp");
+        }
     }    
 }

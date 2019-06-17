@@ -14,6 +14,7 @@ public class ItemQueue : ItemInventory
     }
 
     public override GameObject Pop() {
+        if(queue.Count < 1) return null;
         return queue.Dequeue();
     }
 

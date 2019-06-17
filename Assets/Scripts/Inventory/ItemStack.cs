@@ -14,6 +14,7 @@ public class ItemStack : ItemInventory
     }
 
     public override GameObject Pop() {
+        if(stack.Count < 1) return null;
         return stack.Pop();
     }
 

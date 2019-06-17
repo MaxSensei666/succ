@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 6753607750330928909}
   - component: {fileID: 6753607750330928911}
   - component: {fileID: 6753607750330928910}
+  - component: {fileID: -2470656181780964682}
   - component: {fileID: 1945210955566713064}
   m_Layer: 10
   m_Name: Succ
@@ -218,6 +219,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-2470656181780964682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6753607750330929011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d715baf37d5fa54ab7463149828188b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: 0
 --- !u!114 &1945210955566713064
 MonoBehaviour:
   m_ObjectHideFlags: 0
