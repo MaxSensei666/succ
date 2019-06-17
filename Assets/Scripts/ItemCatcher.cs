@@ -5,17 +5,25 @@ using UnityEngine;
 
 public class ItemCatcher : MonoBehaviour
 {
-    protected Queue<GameObject> inventory;
+
+    public float maxSize;
+
+    protected new Collider2D collider;
+    
+    protected ItemInventory inventory;
 
     protected void Start() {
-        inventory = new Queue<GameObject>();
+        inventory = GetComponentInParent<ItemInventory>();
+        collider = GetComponent<Collider2D>();
     }
 
     protected private void OnTriggerEnter2D(Collider2D other) {
         if(other.tag == "Item") {
-            GameObject otherObject = other.gameObject;
-            otherObject.SetActive(false);
-            inventory.Enqueue(otherObject);
+            if(other.bounds.size.x * other.bounds.size.y <= maxSize) {
+                GameObject otherObject = other.gameObject;
+                otherObject.SetActive(false);
+                inventory.Add(otherObject);
+            }
         }
     }
 }

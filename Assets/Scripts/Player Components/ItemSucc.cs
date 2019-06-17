@@ -7,11 +7,18 @@ public class ItemSucc : MonoBehaviour
 {
     [BeforeStart]
     public GameObject succPrefab;
+
+    [BeforeStart]
+    public float maxSizeFactor;
     
     protected GameObject succObject = null;
+    protected ItemCatcher itemCatcher = null;
 
     protected void Start() {
         succObject = Instantiate(succPrefab, transform);
+        itemCatcher = succObject.GetComponentInChildren<ItemCatcher>();
+        Collider2D succCollider = itemCatcher.GetComponent<Collider2D>();
+        itemCatcher.maxSize = succCollider.bounds.size.x * succCollider.bounds.size.y * maxSizeFactor;
     }
 
     protected void OnDisable() {
