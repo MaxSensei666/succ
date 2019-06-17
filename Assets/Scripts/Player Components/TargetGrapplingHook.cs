@@ -8,6 +8,9 @@ public class TargetGrapplingHook : MonoBehaviour
     public float maxForce;
 
     [BeforeStart]
+    public float maxLength = Mathf.Infinity;
+
+    [BeforeStart]
     public Material lineRendererMaterial;
 
     [BeforeStart]
@@ -37,7 +40,7 @@ public class TargetGrapplingHook : MonoBehaviour
 
     public void GrapplingHookDown() {
         if(!joint.enabled) {
-            RaycastHit2D raycast = Physics2D.Raycast(transform.position, controls.Direction);
+            RaycastHit2D raycast = Physics2D.Raycast(transform.position, controls.Direction, maxLength, LayerMask.GetMask(new string[] {"Wall"}));
             if(!raycast) return;
 
             joint.enabled = true;

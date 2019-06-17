@@ -11,18 +11,13 @@ public class ItemSucc : MonoBehaviour
     [BeforeStart]
     public float maxSizeFactor;
 
-    [BeforeStart]
-    public float shootForceMultiplier;
-    
     protected GameObject succObject = null;
 
     protected void Start() {
         succObject = Instantiate(succPrefab, transform);
         ItemCatcher itemCatcher = succObject.GetComponentInChildren<ItemCatcher>();
-        ItemShooter itemShooter = succObject.GetComponentInChildren<ItemShooter>();
         Collider2D succCollider = itemCatcher.GetComponent<Collider2D>();
         itemCatcher.maxSize = succCollider.bounds.size.x * succCollider.bounds.size.y * maxSizeFactor;
-        itemShooter.force = shootForceMultiplier;
     }
 
     protected void OnDisable() {

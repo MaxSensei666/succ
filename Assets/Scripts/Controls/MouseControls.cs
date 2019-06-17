@@ -21,8 +21,11 @@ public class MouseControls : Controls {
         if(Input.GetMouseButtonDown(0)) {
             BroadcastMessage("ShootDown");
         }
-        if(Input.GetMouseButtonUp(0)) {
-            BroadcastMessage("ShootUp");
+        //if(Input.GetMouseButtonUp(0)) {
+        //    BroadcastMessage("ShootUp");
+        //}
+        if(Input.GetMouseButtonDown(2)) {
+            BroadcastMessage("SuccDown");
         }
     }    
 }

@@ -16,10 +16,10 @@ public class ItemShooter : MonoBehaviour
     protected Controls controls;
 
     protected void Start() {
-        inventory = GetComponentInParent<ItemInventory>();
+        inventory = GetComponent<ItemInventory>();
         controls = GetComponentInParent<Controls>();
         succCollider = GetComponent<Collider2D>();
-        playerCollider = GetComponentInParent<Collider2D>();
+        playerCollider = controls.GetComponent<Collider2D>();
         ItemCatcher catcher = GetComponentInChildren<ItemCatcher>();
         catcherCollider = catcher.GetComponent<Collider2D>();
     }
@@ -30,11 +30,9 @@ public class ItemShooter : MonoBehaviour
         Collider2D projCollider = projectile.GetComponent<Collider2D>();
         Rigidbody2D projBody = projectile.GetComponent<Rigidbody2D>();
         SpriteRenderer projRenderer = projectile.GetComponent<SpriteRenderer>();
-        Physics2D.IgnoreCollision(playerCollider, projCollider);
-        Physics2D.IgnoreCollision(catcherCollider, projCollider);
-        Physics2D.IgnoreCollision(succCollider, projCollider);
+        //Physics2D.IgnoreCollision(catcherCollider, projCollider);
         projBody.velocity = Vector3.zero;
-        projectile.transform.position = transform.position;
+        projectile.transform.position = transform.position + (Vector3)controls.Direction;
         projRenderer.color = Color.cyan;
         projectile.SetActive(true);
         projBody.AddForce(controls.Direction * force);
